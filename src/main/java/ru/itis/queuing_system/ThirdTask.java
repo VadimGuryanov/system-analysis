@@ -20,29 +20,29 @@ public class ThirdTask extends AbstractTask {
 
         Arrays.asList(DayOfWeek.values()).forEach(
                 day -> {
-                    var november = dates.stream().map(Timestamp::toLocalDateTime)
+                    var jule = dates.stream().map(Timestamp::toLocalDateTime)
                             .filter(t -> t.getYear() == 2020)
                             .filter(t -> t.getMonth() == Month.JULY)
                             .filter(t -> t.getDayOfWeek() == day)
                             .collect(Collectors.groupingBy(LocalDateTime::toLocalDate, Collectors.counting()));
-                    var december = dates.stream().map(Timestamp::toLocalDateTime)
+                    var august = dates.stream().map(Timestamp::toLocalDateTime)
                             .filter(t -> t.getYear() == 2020)
                             .filter(t -> t.getMonth() == Month.AUGUST)
                             .filter(t -> t.getDayOfWeek() == day)
                             .collect(Collectors.groupingBy(LocalDateTime::toLocalDate, Collectors.counting()));
-                    var january = dates.stream().map(Timestamp::toLocalDateTime)
+                    var september = dates.stream().map(Timestamp::toLocalDateTime)
                             .filter(t -> t.getYear() == 2020)
                             .filter(t -> t.getMonth() == Month.SEPTEMBER)
                             .filter(t -> t.getDayOfWeek() == day)
                             .collect(Collectors.groupingBy(LocalDateTime::toLocalDate, Collectors.counting()));
 
-                    applications.putAll(november);
-                    applications.putAll(december);
-                    applications.putAll(january);
+                    applications.putAll(jule);
+                    applications.putAll(august);
+                    applications.putAll(september);
 
                     int i = 1;
-                    for (var monday : applications.values()) {
-                        log.info("{} №{}; Кол-во заявок = {}\n", day.getDisplayName(TextStyle.FULL, Locale.ROOT), i, monday);
+                    for (var d : applications.values()) {
+                        log.info("{} №{}; Кол-во заявок = {}\n", day.getDisplayName(TextStyle.FULL, Locale.ROOT), i, d);
                         i++;
                     }
 

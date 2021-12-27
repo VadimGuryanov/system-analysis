@@ -21,15 +21,15 @@ public class FourthTask extends AbstractTask {
         List<Long> forSemptember = countApplicationsForMonth(dates, Month.SEPTEMBER);
 
         IntStream.range(0, forJule.size()).forEach(
-                i -> log.info("Неделя #{} для Июля заявок = {}", i, forJule.get(i))
+            i -> log.info("Неделя #{} для Июля заявок = {}", i, forJule.get(i))
         );
 
         IntStream.range(0, forAugust.size()).forEach(
-                i -> log.info("Неделя #{} для Августа заявок = {}", i, forAugust.get(i))
+            i -> log.info("Неделя #{} для Августа заявок = {}", i, forAugust.get(i))
         );
 
         IntStream.range(0, forSemptember.size()).forEach(
-                i -> log.info("Неделя #{} для Сентября заявок = {}", i, forSemptember.get(i))
+            i -> log.info("Неделя #{} для Сентября заявок = {}", i, forSemptember.get(i))
         );
 
         log.info("для Июля");
